@@ -31,6 +31,10 @@ const About = () => {
     }
   };
 
+
+  
+  
+
   const handleKeyDown = (e) => {
     // Allow Enter + Shift for new line
     if (e.key === "Enter" && !e.shiftKey) {

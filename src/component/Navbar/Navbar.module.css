@@ -72,3 +72,11 @@
   background-color: #00cc66;
   transform: scale(1.05);
 }
+
+div>button{
+   border-radius:25px;
+   padding: .8rem;
+   font-weight: 700;
+   background-color: #00ff81;
+   color: black;
+}

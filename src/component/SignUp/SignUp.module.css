@@ -1,0 +1,98 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #565a617b; /* white / light gray */
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  background: #f0f2f5;
+  padding: 32px;
+  border-radius: 20px;
+  text-align: center;
+  color: #333;
+
+  /* Neumorphism shadow */
+  box-shadow:
+    8px 8px 16px rgba(0, 0, 0, 0.12),
+    -8px -8px 16px rgba(202, 195, 195, 0.9);
+}
+
+.card h2 {
+  margin-bottom: 22px;
+  font-weight: 700;
+  color: #222;
+}
+
+.card input {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: #f0f2f5;
+  color: #333;
+
+  /* Inset neumorphism */
+  box-shadow:
+    inset 4px 4px 8px rgba(0, 0, 0, 0.12),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+}
+
+.card input::placeholder {
+  color: #888;
+}
+
+.card button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: #f0f2f5;
+  color: #0072ff;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+
+  /* Button neumorphism */
+  box-shadow:
+    6px 6px 12px rgba(0, 0, 0, 0.12),
+    -6px -6px 12px rgba(255, 255, 255, 0.9);
+
+  transition: all 0.2s ease;
+}
+
+.card button:hover:not(:disabled) {
+  box-shadow:
+    inset 6px 6px 12px rgba(0, 0, 0, 0.12),
+    inset -6px -6px 12px rgba(255, 255, 255, 0.9);
+}
+
+.card button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #d9534f;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.switch {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #555;
+}
+
+.switch span {
+  color: #0072ff;
+  cursor: pointer;
+  font-weight: 600;
+}

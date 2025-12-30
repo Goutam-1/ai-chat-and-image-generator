@@ -1,13 +1,26 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink ,useNavigate} from 'react-router-dom';
+import axios from "axios";
 import styles from './Navbar.module.css';
-import { useAuth0 } from '@auth0/auth0-react';
+
 
 
 export default function Navbar() {
-  const {user, isAuthenticated } = useAuth0();
-
-console.log(user);
+    const navigate=useNavigate()
+const logout= async ()=>{
+ try{     
+  const res=  await axios.post("http://localhost:8080/logout",{},{
+          withCredentials:true})
+        if(res.status===200){
+          navigate("/")
+        }
+        
+  
+  }catch(err){
+    console.log(err);
+    
+  }
+}
 
 
   return (
@@ -16,7 +29,7 @@ console.log(user);
 
       <div className={styles.navLinks}>
         <NavLink
-          to="/"
+          to="/image"
           className={({ isActive }) =>
             isActive ? `${styles.navItem} ${styles.active}` : styles.navItem
           }
@@ -44,9 +57,7 @@ console.log(user);
       </div>
 
       <div className={styles.navSignup}>
-        <NavLink to="/signup" className={styles.signupBtn}>
-        {isAuthenticated ? JSON.parse(localStorage.getItem("authUser")).name : 'SignUP'}
-        </NavLink>
+         <button onClick={logout}>LogOUt</button>
       </div>
     </div>
   );

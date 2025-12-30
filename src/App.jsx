@@ -1,19 +1,26 @@
 import React, { useEffect } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
 import './App.css'
 import Navbar from "./component/Navbar/Navbar.jsx";
 import Text from "./component/Text/Text.jsx";
 import Generatore from "./component/Generatore/Generatore.jsx";
 import History from "./component/History/History.jsx";
 import Noutfound from "./component/Notfound/Noutfound.jsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter} from "react-router-dom";
 import SignUp from "./component/SignUp/SignUp.jsx";
+import axios from "axios";
 
 
-    const router = createBrowserRouter(
+export const router = createBrowserRouter(
       [
-      {
-        path:'/',
+     { 
+        path:"/",
+        element:<>
+          <SignUp/>
+        </>
+     },
+     
+        {  
+        path:'/image',
         element:<div>   
            <Navbar/>
            <Generatore/>
@@ -39,15 +46,9 @@ import SignUp from "./component/SignUp/SignUp.jsx";
         </div>
   
       },
-{
-     path:"/signup",
- element:<div>
- <SignUp/>    
 
- </div>
-
-},
       {
+
         path:"*",
         element:<Noutfound/>
 
@@ -56,15 +57,26 @@ import SignUp from "./component/SignUp/SignUp.jsx";
     ]);
 
 
- 
+
+
 function App() {
+   
 
 
-    return(
+
+
+
+
+
+
+
+
+return(
+      
         <div>
-             <RouterProvider router={router}/>
+            
         </div>
-    )
+        )
    }
 
  export default App;
