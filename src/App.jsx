@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import './App.css'
 import Navbar from "./component/Navbar/Navbar.jsx";
 import Text from "./component/Text/Text.jsx";
@@ -7,7 +7,7 @@ import History from "./component/History/History.jsx";
 import Noutfound from "./component/Notfound/Noutfound.jsx";
 import { createBrowserRouter} from "react-router-dom";
 import SignUp from "./component/SignUp/SignUp.jsx";
-import axios from "axios";
+
 
 
 export const router = createBrowserRouter(
