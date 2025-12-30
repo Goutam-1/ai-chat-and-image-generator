@@ -7,43 +7,53 @@ import History from "./component/History/History.jsx";
 import Noutfound from "./component/Notfound/Noutfound.jsx";
 import { createBrowserRouter} from "react-router-dom";
 import SignUp from "./component/SignUp/SignUp.jsx";
+import ProtectRoute from "./component/ProtectRoute/ProtectRoute.jsx";
 
 
 
 export const router = createBrowserRouter(
       [
+
      { 
         path:"/",
         element:<>
           <SignUp/>
         </>
      },
+
+     {
+       path:"/dashboard",
+       element:
+              <Navbar/>
+     },
      
-        {  
+     {  
         path:'/image',
-        element:<div>   
-           <Navbar/>
-           <Generatore/>
-           </div>
-      },
+        element:
+            <ProtectRoute> 
+              <Navbar/>
+              <Generatore/>
+               </ProtectRoute>
+          
+    },
 
       {
         path:"/text",
         element:
-        <div>
-           <Navbar/>
-           <Text/>
-       </div>
-
+        <ProtectRoute> 
+            <Navbar/>
+            <Text/>
+        </ProtectRoute>
+      
       },
 
       {
         path:"/history",
         element:
-        <div>     
+        <ProtectRoute>   
            <Navbar/>
            <History/>
-        </div>
+        </ProtectRoute>
   
       },
 

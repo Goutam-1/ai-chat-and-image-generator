@@ -24,7 +24,7 @@ useEffect(()=>{
           withCredentials:true })
             if(res.status===200)
             {
-              navigate("/text")
+              navigate("/dashboard")
             }
              
        }catch(err){
@@ -104,7 +104,7 @@ useEffect(()=>{
       }
 
       alert(isLogin ? "Login successful" : "Signup successful");
-      isLogin ? navigate("/text") : setIsLogin(true);
+      isLogin ? navigate("/dashboard") : setIsLogin(true);
     } catch (err) {
       setError(err.message);
     } finally {

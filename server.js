@@ -176,10 +176,7 @@ app.post("/login", async (req, res) => {
 app.get("/verify",(req,res)=>{
     try{const token =req.cookies.token
     if(!token){
-         return
-      res.status(401).json({
-        message:"Not Authorized"
-      })
+         return res.status(401).json({ message:"Not Authorized"  })
     }
   
     const decode =jwt.verify(token,process.env.JWT_SECRET)
